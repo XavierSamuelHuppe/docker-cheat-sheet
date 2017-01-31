@@ -1,7 +1,35 @@
 # dockerCheatSheet
 My personal day-to-day reminder
 
-##Everything
+## What I use
+
+### Images and repo
+
+* `docker push` (ex: docker push xaviersamuelhuppe/catnip) push an image to a repo
+* `docker pull` Fetch an Image from a repo.
+* `docker images` See all images on my computer.
+* `docker rmi [IMAGE_ID]` Delete an image.
+* `docker build [location of directory containing Dockerfile]` Create an image from a Dockerfile.
+* `docker login` login...
+### Containers
+
+* `docker run` Run an image in a container.  
+  * `-it` Attach us to an interactive tty in the container.
+  * `-d` Detach terminal, make standalone process.
+  * `-P` Publish all exposed ports to random ports.
+  * `--name [something]` Give a name to the container.
+  * `-p 8888:80` Attach port 80 of container to port 8888 of host.
+* `docker port [container_name]` see published ports of exposed ports in container.
+* `docker stop [CONTAINER_ID]` 
+
+* `docker ps` See running containers.
+  * `-a` See every containers (and remnants of old ones).
+* `docker rm [CONTAINER_ID]` delete a container(s).
+  * `docker rm $(docker ps -a -q -f status=exited)` Clever delete old containers.
+
+
+
+## Everything
 
 ### Starting and Stopping
 
